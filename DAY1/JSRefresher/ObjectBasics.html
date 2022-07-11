@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //1. Object Literal Syntax
+        var player = {
+            name:"Nadal",
+            sport:"Tennis",
+            isSeeded:true,
+            titlesWon:["US Open","French Open","ATP Tour"],
+            noOfGradslamsWon:22,
+            career:{
+                firstMatch:"French Open",
+                totalMatches:100,
+                turnedProfessional:15,
+                titles:{
+                    firstTitleYear:2005,
+                    name:"Australian Opens"
+                }
+
+            },
+            getDetails:function(){
+                console.log("The player " + this.name + " has won " + this.noOfGradslamsWon + " titles !")
+            }
+        }
+
+        //2. Using Object Constrcutor/Object
+    
+
+        var company = new Object();
+        company.name = "Mathworks";
+        company.city = "Bengaluru";
+company.getDetails = function(){
+    console.log(this.name + " is @ " + this.city)
+}
+
+// Object.values() / keys()
+
+// for (var key in company) {
+//     console.log(key)
+// }
+
+// Associative Array Syntax
+console.log(player.name);
+console.log(player["name"]);
+
+for (var p in company) {
+    console.log(p + " : " + company[p])
+}
+
+// 3. Custom Constructor
+
+function Employee(){
+    this.name = "Mr. X";
+    this.salary = 500000;
+    this.getDetails = function(){
+        console.log(this.name + " has salary : " + this.salary)
+    }
+}
+
+var emp = new Employee();
+emp.getDetails();
+var e = emp;
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let y = 200; // window.y -> undefined
+      var z = 300;
+
+      // let -> block scoping
+      if (true) {
+        let x; // decl
+        x = 100; // defn
+        x = 200;
+        {
+          console.log(x);
+        }
+        // 100 lines
+
+        //  let x = 200; // Error !
+      }
+
+      // const PI = 3.14;
+      //   PI = 3.14565; // Error!
+
+      //const PI;//Missing initializer in const declaration
+      //PI = 3.14;
+
+      // Destructuring - Arrays & Objects
+      //   var cars = ["BMW", "AUDI", "MERC"];
+      // var firstCar,secondCar;
+      //   firstCar = cars[0];
+      //   secondCar = cars[1];
+      // OR
+      //let [firstCar, secondCar, thirdCar, fourthCar = "TATA"] = cars;
+
+      // With Objects
+      //    var player = {
+      //         name:"Nadal",
+      //         sport:"Tennis",
+      //         isSeeded:true,
+      //         titlesWon:["US Open","French Open","ATP Tour"],
+      //         noOfGradslamsWon:22
+      //     };
+
+      //     let {sport:SPORT,name} = player;
+
+      // Spread Operator - With Arrays & Objects
+
+      var cars = ["BMW", "AUDI", "MERC"];
+      var moreCars = ["TATA", "MAHINDRA"];
+      var allCars = [...cars, ...moreCars];
+      cars[0] = "XYZ";
+
+      // With Objects
+      var person = { name: "Neeraj Chopra", country: "INDIA" };
+      var player = {
+        sport: "Javelin",
+        isGoldMedalist: true,
+        country: "BHARAT",
+        ...person,
+      };
+
+      function PrintPlayer({name,country}) {
+        console.log(name + " represents " + country);
+      }
+
+      PrintPlayer(player);
+
+    </script>
+  </head>
+  <body></body>
+</html>
