@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="courseList"></ul>
+
+    <script>
+      let courses = ["HTML5", "CSS3", "React", "Angular", "Node"]; // server
+
+      let courseList = document.getElementById("courseList");
+      for (let course of courses) {
+        let newListItem = document.createElement("li");
+        newListItem.id = course;
+        newListItem.innerText = course;
+        courseList.appendChild(newListItem);
+      }
+    </script>
+  </body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="txtCourse">Course Name :</label>
+    <input type="text" id="txtCourse" />
+    <button onclick="AddCourse()">Add</button>
+    <ul id="courseList"></ul>
+
+    <script>
+      function AddCourse() {
+        let newListItem = document.createElement("li");
+        let newCourse = document.getElementById("txtCourse").value;
+        // newListItem.innerText = newCourse;
+        // newListItem.innerHTML = "<strong>" + newCourse + "</strong>";
+        // OR
+        //newListItem.innerHTML = `<strong> <a href="#"> ${newCourse} </a> </strong>`;
+        // OR
+        let newLink = document.createElement("a");
+        newLink.href = "#";
+        newLink.innerText = newCourse;
+
+        let newStrong = document.createElement("strong");
+        newStrong.appendChild(newLink);
+
+        newListItem.appendChild(newStrong);
+
+        let courseList = document.getElementById("courseList");
+        courseList.appendChild(newListItem);
+      }
+    </script>
+  </body>
+</html> -->

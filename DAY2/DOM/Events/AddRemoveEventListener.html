@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      function Handler() {
+        alert("U Clicked !");
+      }
+
+      function AddHandler() {
+        let targetBtn = document.getElementById("targetBtn");
+        //targetBtn.addEventListener("click", Handler);
+
+        // OR
+        targetBtn.onclick = Handler;
+      }
+
+      function RemoveHandler() {
+        let targetBtn = document.getElementById("targetBtn");
+        targetBtn.removeEventListener("click", Handler);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="AddHandler()">+</button>
+    <button id="targetBtn">Target</button>
+
+    <button onclick="RemoveHandler()">-</button>
+  </body>
+</html>

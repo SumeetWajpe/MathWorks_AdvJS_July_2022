@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function Initialize() {
+        // let para = document.getElementById("para");// DOM API
+        // console.log(para.innerText);
+        let allPs = document.getElementsByTagName("p");
+        // for (let index = 0; index < allPs.length; index++) {
+        //     allPs[index].style.border = "2px solid red";
+        //     allPs[index].style.padding = "5px";
+        //     allPs[index].style.width = "200px";
+
+        //   console.log(allPs[index].innerText);
+        // }
+
+        for (let para  of allPs) {
+            para.style.border = "2px solid red"
+        }
+      }
+
+      function ChangeText() {
+        // let para = document.getElementById("para"); // DOM API
+        // para.innerText = "Changed On Click !";
+      }
+    </script>
+  </head>
+  <body onload="Initialize()">
+    <p id="para">Hey ! This is a paragraph !</p>
+    <p>This is also a para !</p>
+    <p>This too is a para !</p>
+
+    <div>
+        <p>Para Within Div !</p>
+    </div>
+
+    <button onclick="ChangeText()">Set Text !</button>
+    <!-- <strong>Comment this</strong> -->
+  </body>
+</html>

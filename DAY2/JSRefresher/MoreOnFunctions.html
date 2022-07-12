@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function Outer() {
+        var msg = "Within Inner Function !";
+        return function () {
+          console.log(msg);
+        };
+      }
+
+      var Inner = Outer();
+      Inner();
+      Inner();
+      Inner();
+      Inner();
+      /// Usage
+
+      function Counter() {
+        var count = 0;
+        return function () {
+          console.log(++count);
+        };
+      }
+
+      var MyCounter = Counter();
+      MyCounter();
+
+      // 100 lines
+      MyCounter();
+
+      // IIFE - Immediately Invocable Function Expression
+      // Executed only once ! - Initialization
+      
+      (function(msg) {
+        console.log(msg)
+      })("IIFE Executed !")
+
+
+      var result = (function(x,y){
+        return x + y;
+      })(30,50);
+
+
+      // literal syntax
+      var company = {namE:"Mathworks",city:"Bengaluru",isMultiNational:true};
+
+    //  var MathModule = (function(){
+
+    //     var operations = {};
+    //     var PI = 3.14;
+    //     operations.Add = function (x,y){
+    //         return x + y;
+    //     }
+
+    //     function Product(x, y) {
+    //          return x * y;
+    //      }
+
+
+    //     operations.Multiplication = Product;
+    //       return operations;
+
+
+    //   })();
+
+
+     var MathModule = (function () {
+
+            
+            var PI = 3.14;
+           function Add(x, y) {
+                return x + y;
+            }
+
+            function Product(x, y) {
+                return x * y;
+            }
+
+
+            
+            return {
+                Addition:Add,
+                Multiplication:Product
+            }
+
+
+        })();
+
+
+      
+
+    </script>
+  </head>
+  <body></body>
+</html>

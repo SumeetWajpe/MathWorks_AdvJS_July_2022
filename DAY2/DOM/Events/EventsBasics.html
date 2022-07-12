@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="courseList"></ul>
+
+    <script>
+      function EventHandler() {
+        console.log("Another Handler !");
+      }
+
+      let courses = ["HTML5", "CSS3", "React", "Angular", "Node"]; // server
+
+      let courseList = document.getElementById("courseList");
+      for (let course of courses) {
+        let newListItem = document.createElement("li");
+        newListItem.id = course;
+        newListItem.innerText = course;
+        newListItem.addEventListener("click", function () {
+          //this.remove();
+          console.log("First Handler !");
+        });
+        newListItem.addEventListener("click", function () {
+          //this.remove();
+          console.log("Second Handler !");
+        });
+        newListItem.addEventListener("click", EventHandler);
+        courseList.appendChild(newListItem);
+      }
+    </script>
+  </body>
+</html>

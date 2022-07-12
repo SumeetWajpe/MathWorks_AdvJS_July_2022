@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+function Shape(l,b) {
+    this.length = l || 0;
+    this.breadth = b || 0;
+}
+
+function Rect(l,b,isSquare){
+    Shape.call(this,l,b); //?
+    this.isSquare = isSquare || false;
+}
+
+
+var rectObj = new Rect(200,300,false);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

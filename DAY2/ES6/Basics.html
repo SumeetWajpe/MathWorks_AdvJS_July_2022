@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // let y = 200; // window.y -> undefined
+      // var z = 300;
+
+      // // let -> block scoping
+      // if (true) {
+      //   let x; // decl
+      //   x = 100; // defn
+      //   x = 200;
+      //   {
+      //     console.log(x);
+      //   }
+      //   // 100 lines
+
+      //   //  let x = 200; // Error !
+      // }
+
+      // // const PI = 3.14;
+      // //   PI = 3.14565; // Error!
+
+      // //const PI;//Missing initializer in const declaration
+      // //PI = 3.14;
+
+      // // Destructuring - Arrays & Objects
+      // //   var cars = ["BMW", "AUDI", "MERC"];
+      // // var firstCar,secondCar;
+      // //   firstCar = cars[0];
+      // //   secondCar = cars[1];
+      // // OR
+      // //let [firstCar, secondCar, thirdCar, fourthCar = "TATA"] = cars;
+
+      // // With Objects
+      // //    var player = {
+      // //         name:"Nadal",
+      // //         sport:"Tennis",
+      // //         isSeeded:true,
+      // //         titlesWon:["US Open","French Open","ATP Tour"],
+      // //         noOfGradslamsWon:22
+      // //     };
+
+      // //     let {sport:SPORT,name} = player;
+
+      // // Spread Operator - With Arrays & Objects
+
+      // var cars = ["BMW", "AUDI", "MERC"];
+      // var moreCars = ["TATA", "MAHINDRA"];
+      // var allCars = [...cars, ...moreCars];
+      // cars[0] = "XYZ";
+
+      // // With Objects
+      // var person = { name: "Neeraj Chopra", country: "INDIA" };
+      // var player = {
+      //   ...person,
+      //   sport: "Javelin",
+      //   isGoldMedalist: true,
+      //   country: "BHARAT",
+      // };
+
+      // function PrintPlayer({ name, country }) {
+      //   console.log(name + " represents " + country);
+      // }
+
+      // PrintPlayer(player);
+
+      // // Functions
+      // //1. Default parameters
+
+      // function PrintBook(
+      //   author = "Dr. APJ Abdul Kalam",
+      //   title = "Unknown",
+      //   publisher = "Unknown",
+      // ) {
+      //   // author = author || "Unknown";
+      //   // title = title || "Unknown";
+      //   // publisher = publisher || "Unknown";
+
+      //   console.log(author, title, publisher);
+      // }
+
+      // PrintBook();
+      // // PrintBook("Dr. APJ Abdul Kalam","India 2020","Printwell");
+      // PrintBook(undefined, "India 2020", "Printwell");
+      // PrintBook(undefined, "Wings Of Fire");
+
+      // // 2. Rest Parameters
+      // function PrintBook(author, ...titles) {
+      //   console.log(author, titles);
+      // }
+
+      // PrintBook("Dr. APJ Abdul Kalam", "Wings Of Fire", "India 2020");
+      // PrintBook("Sachin Tendulkar", "Playing It My Way");
+      // PrintBook();
+
+      // 3. Arrow Functions
+      // var Add = function(x,y){
+      //   return x + y;
+      // }
+
+      // OR
+      // var Add = (x, y) => {
+      //   return x + y;
+      // };
+
+      // OR
+
+      // var Add = (x, y) => x + y;
+
+      // var cars = ["BMW", "AUDI", "MERC"];
+      // // cars.forEach(function (car) {
+      // //   console.log(car);
+      // // });
+      // // OR
+      // cars.forEach(car => console.log(car));
+
+      // function Emp() {
+      //   this.salary = 500000;
+      //   var _this = this; // ES5
+      //   setTimeout(function () {
+      //     console.log(_this.salary);
+      //   }, 3000);
+      // }
+
+      // OR
+
+      // function Emp() {
+      //   this.salary = 500000;
+      //   setTimeout(() => console.log(this.salary), 3000); //ES6
+      // }
+
+      // var e = new Emp();
+
+      // // Arrow Functions cannot be used as constrcutors
+      // var EmpAsArrow = () => {
+      //   this.salary = 400000;
+      //   console.log(this);
+      // };
+
+      // EmpAsArrow();
+
+      // Classes
+      // ES6
+      // ES8
+      // class Car {
+      //   name = "AUDI";
+      //   speed = 300;
+      // }
+      // class Car {
+      //   static carMake = 1999;
+      //   constructor(name = "BMW", speed = 200) {
+      //     this.name = name;
+      //     this.speed = speed;
+      //   }
+
+      //   static printCarMake() {
+      //     console.log(this.carMake);// Car.carMake
+      //   }
+
+      //   accelerate() {
+      //     console.log(
+      //       "The car " + this.name + " is running at " + this.speed + " kmph !",
+      //     );
+      //   }
+      // }
+
+      //var carObj = new Car("MERC", 300);
+      // carObj.accelerate();
+      // console.log(Car.carMake);
+      // Car.printCarMake();
+
+      // Inheritance
+
+      class Car {
+        constructor(name = "BMW", speed = 200) {
+          this.name = name;
+          this.speed = speed;
+        }
+        accelerate() {
+          console.log(
+            `The car ${this.name} is running at ${this.speed} kmph !`,
+          );
+
+          // console.log(
+          //   "The car " + this.name + " is running at " + this.speed + " kmph !",
+          // );
+        }
+      }
+
+      class JamesBondCar extends Car {
+        constructor(name, speed, isArmed) {
+          super(name, speed);
+          this.isArmed = isArmed;
+        }
+      }
+
+      var jbc = new JamesBondCar("Aston Martin", 400, true);
+      jbc.accelerate();
+
+      // String Templates
+      var firstMsg = "First Line !";
+      var multiLineStr = `
+      ${firstMsg}
+      Second Line !
+      Last Line !
+      `;
+
+      console.log(multiLineStr);
+
+      // Enhanced Object Literal Syntax
+      let title = "Wings Of Fire";
+      let author = "Dr. APJ Abdul Kalam";
+
+      var book = { title: title, author: author };
+      // OR
+      var book = { title, author };
+    </script>
+  </head>
+  <body></body>
+</html>
